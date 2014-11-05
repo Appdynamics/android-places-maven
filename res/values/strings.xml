@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PlacesDemo</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="lat_legend">Latitude:  </string>
+    <string name="lng_legend">Longitude: </string>
+    <string name="elevation_legend">Elevation: </string>
+    <string name="search_button">Search</string>
+    <string name="toast_enter_address">Please enter an address to search</string>
+    <string name="elected_officials_legend">Elected Officials</string>
+
+</resources>
