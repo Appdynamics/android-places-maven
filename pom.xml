@@ -6,7 +6,6 @@
   <artifactId>placesdemo</artifactId>
   <version>1.0.0</version>
   <packaging>apk</packaging>
-
   <name>PlacesDemo</name>
 
   <dependencies>
@@ -40,6 +39,11 @@
       <version>1.19.0</version>
       <scope>compile</scope>
     </dependency>
+    <dependency>
+      <groupId>com.appdynamics</groupId>
+      <artifactId>appdynamics-runtime</artifactId>
+      <version>1.0</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -65,6 +69,19 @@
           </sdk>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>com.appdynamics</groupId>
+          <artifactId>appdynamics-maven-plugin</artifactId>
+          <version>1.0</version>
+          <executions>
+            <execution>
+              <phase>compile</phase>
+              <goals>
+                <goal>adinject</goal>
+              </goals>
+            </execution>
+          </executions>
+       </plugin>
     </plugins>
   </build>
 

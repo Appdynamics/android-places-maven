@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.appdynamics.eumagent.runtime.Instrumentation;
+
 import com.google.api.services.civicinfo.model.GeographicDivision;
 import com.google.api.services.civicinfo.model.Office;
 import com.google.api.services.civicinfo.model.Official;
@@ -40,6 +42,12 @@ public class MainActivity extends Activity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
+        // Enable AppDynamics Instrumentation
+        Instrumentation.start("EUM-AAB-AUA",
+                              getApplicationContext(),
+                              "http://10.0.2.2:7001",
+                              true);
     }
 
     @Override
@@ -137,6 +145,17 @@ public class MainActivity extends Activity {
                 public void onClick(View v) {
                     final String searchAddress = mAddress.getText().toString();
                     Log.d(TAG, "searchAddress: " + searchAddress);
+
+                    try  {
+                        mLatitude.setText("");
+                        mLongitude.setText("");
+                        mElevation.setText("");
+                        mOfficials.setAdapter(null);
+                    }
+                    catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
                     if (! searchAddress.isEmpty()) {
                         try {
                             // Check for Geolocation information first
