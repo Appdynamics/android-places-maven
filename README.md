@@ -6,14 +6,7 @@ Using Google APIs
 -----------------
 You will need a Google API key to access the [Geocoding API](https://developers.google.com/maps/documentation/geocoding/), [Elevation API](https://developers.google.com/maps/documentation/elevation/) and [Google Civic Information API](https://developers.google.com/civic-information/): these services have courtesy limits, which allow limited use free of charge. Use the [Google API Console](https://code.google.com/apis/console) to create a Google API project, add the required services (APIs & Auth -> API) and then create an API Key (APIs & Auth -> Credentials). Create a Browser key and leaved the Allowed Referers field blank.
 
-Create the following class file (`GooglePlacesKey.java`) in `src/com/example/appdynamics/placesdemo` and paste in your API key:
-```
-package com.example.appdynamics.placesdemo;
-
-public class GooglePlacesKey {
-    public static final String API_KEY = "<your API key>";
-}
-```
+Add your Google Places API key to `src/com/example/appdynamics/placesdemo/GooglePlacesKey.java`
 
 Eclipse ADT Builds
 ------------------
