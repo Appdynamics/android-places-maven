@@ -44,9 +44,9 @@ public class MainActivity extends Activity {
         }
 
         // Enable AppDynamics Instrumentation
-        Instrumentation.start("EUM-AAB-AUA",
+        Instrumentation.start("", // Add EUM Application Key
                               getApplicationContext(),
-                              "http://10.0.2.2:7001",
+                              "", // Add EUM Collector URI
                               true);
     }
 
